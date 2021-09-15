@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Sidebar menu responsive</title>
+    </head>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+
+            <div class="header__img">
+                <img src="assets/img/admin.jfif" alt="Admin">
+            </div>
+        </header>
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__list">
+                    <a href="#" class="nav__link active tablink" onclick="openCity('admin', this, 'blue')" id="defaultOpen">
+                        <i class='bx bx-layer nav__logo-icon'></i>
+                        <span class="nav__logo-name">Admin Page</span>
+                    </a>
+
+                    
+                        <a href="#" class="nav__link tablink" onclick="openCity('booked_room', this, 'blue')">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Booked room</span>
+                        </a>
+
+                        <a href="#" class="nav__link tablink" onclick="openCity('Tokyo', this, 'blue')">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name">Users</span>
+                        </a>
+                        
+                        <!-- <a href="#" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Messages</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon' ></i>
+                            <span class="nav__name">Favorites</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Data</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Analytics</span>
+                        </a> -->
+                    </div>
+                </div>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        
+<div id="admin" class="tabcontent">
+    <h1>Welcome To Admin Page</h1>
+  </div>
+  
+  <div id="booked_room" class="tabcontent">
+    <h1>Paris</h1>
+    <p>Paris is the capital of France.</p> 
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <h1>Tokyo</h1>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+  
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+        <script>
+            function openCity(cityName,elmnt,color) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+              }
+              document.getElementById(cityName).style.display = "block";
+              elmnt.style.backgroundColor = color;
+            
+            }
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+            </script>
+    </body>
+</html>
